@@ -181,8 +181,22 @@
         .hero {
             padding-top: calc(var(--section-padding) + 4rem);
             padding-bottom: var(--section-padding);
-            text-align: center;
             background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-soft) 100%);
+        }
+
+        .hero .section-inner {
+            max-width: var(--content-width);
+        }
+
+        .hero-layout {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 0;
         }
 
         .hero-badge {
@@ -199,28 +213,24 @@
 
         .hero h1 {
             font-family: var(--font-serif);
-            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
             line-height: 1.12;
             letter-spacing: -0.02em;
             color: var(--color-text);
             margin-bottom: 1.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .hero-sub {
             font-size: clamp(1.05rem, 2vw, 1.2rem);
             color: var(--color-text-secondary);
             max-width: 520px;
-            margin: 0 auto 2.5rem;
+            margin-bottom: 2.5rem;
             line-height: 1.65;
         }
 
         .hero-cta {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 1rem;
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
@@ -246,6 +256,46 @@
             font-size: 0.85rem;
             color: var(--color-text-light);
             font-style: italic;
+        }
+
+        /* Hero phone mockup — right side */
+        .hero-mockup {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .phone-frame {
+            width: 280px;
+            height: 560px;
+            border-radius: 32px;
+            background: var(--color-white);
+            border: 8px solid var(--color-text);
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .phone-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .phone-frame-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-bg-warm);
+            color: var(--color-text-light);
+            font-size: 0.85rem;
+            gap: 0.5rem;
+        }
+
+        .phone-frame-placeholder svg {
+            opacity: 0.4;
         }
 
         /* ===== EMOTIONAL HOOK ===== */
@@ -371,10 +421,40 @@
             border-radius: 16px;
             padding: 2rem;
             transition: transform 0.25s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .feature-card:hover {
             transform: translateY(-3px);
+        }
+
+        .feature-screenshot {
+            margin-top: auto;
+            padding-top: 1.25rem;
+        }
+
+        .feature-screenshot-frame {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--color-bg-soft);
+            aspect-ratio: 16 / 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-screenshot-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .screenshot-placeholder {
+            color: var(--color-text-light);
+            font-size: 0.75rem;
+            text-align: center;
         }
 
         .feature-icon {
@@ -613,6 +693,38 @@
             line-height: 1.6;
         }
 
+        .how-step-screenshot {
+            margin-top: 1.5rem;
+        }
+
+        .how-phone-frame {
+            width: 160px;
+            height: 320px;
+            border-radius: 20px;
+            background: var(--color-white);
+            border: 5px solid var(--color-text);
+            overflow: hidden;
+            margin: 0 auto;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .how-phone-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .how-phone-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-bg);
+            color: var(--color-text-light);
+            font-size: 0.7rem;
+        }
+
         .how-footer {
             text-align: center;
             margin-top: 3rem;
@@ -662,19 +774,48 @@
             padding: 2rem;
         }
 
-        .testimonial-stars {
-            color: var(--color-accent-warm);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-        }
-
         .testimonial-card blockquote {
             font-size: 1rem;
             color: var(--color-text);
             line-height: 1.65;
-            margin-bottom: 1.25rem;
-            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-footer {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--color-bg-soft);
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-avatar-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-light);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .testimonial-info {
+            display: flex;
+            flex-direction: column;
         }
 
         .testimonial-author {
@@ -788,6 +929,30 @@
                 display: none;
             }
 
+            .hero-layout {
+                flex-direction: column;
+                text-align: center;
+                gap: 2.5rem;
+            }
+
+            .hero-sub {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .hero-micro {
+                text-align: center;
+            }
+
+            .hero-mockup .phone-frame {
+                width: 220px;
+                height: 440px;
+            }
+
             .features-grid {
                 grid-template-columns: 1fr;
             }
@@ -861,18 +1026,31 @@
     <!-- HERO -->
     <section class="section hero">
         <div class="section-inner">
-            <div class="hero-badge">For all the invisible work</div>
-            <h1>Hold less. Live more.</h1>
-            <p class="hero-sub">A warm, shared space for your family's plans, routines and everyday remembering. Built to reduce mental load, not add to it.</p>
-            <div class="hero-cta">
-                <a href="#" aria-label="Download on the App Store">
-                    <img class="store-badge" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1624406400" alt="Download on the App Store">
-                </a>
-                <a href="#" aria-label="Get it on Google Play">
-                    <img class="store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
-                </a>
+            <div class="hero-layout">
+                <div class="hero-text">
+                    <div class="hero-badge">Hold less. Live more.</div>
+                    <h1>For all of the invisible work.</h1>
+                    <p class="hero-sub">A warm, shared space for your family's plans, routines and everyday remembering. Built to reduce mental load, not add to it.</p>
+                    <div class="hero-cta">
+                        <a href="#" aria-label="Download on the App Store">
+                            <img class="store-badge" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1624406400" alt="Download on the App Store">
+                        </a>
+                        <a href="#" aria-label="Get it on Google Play">
+                            <img class="store-badge" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                        </a>
+                    </div>
+                    <p class="hero-micro">No pressure. No complexity. Just a gentler way to stay on top of things together.</p>
+                </div>
+                <div class="hero-mockup fade-in">
+                    <div class="phone-frame">
+                        <!-- Replace with: <img src="hero-screenshot.png" alt="Youtine app home screen"> -->
+                        <div class="phone-frame-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                            App screenshot
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="hero-micro">No pressure. No complexity. Just a gentler way to stay on top of things together.</p>
         </div>
     </section>
 
@@ -912,6 +1090,12 @@
                     </div>
                     <h3>Everything in one place</h3>
                     <p>One shared view for your whole family. No more scattered notes, texts, and half-remembered conversations.</p>
+                    <div class="feature-screenshot">
+                        <div class="feature-screenshot-frame">
+                            <!-- Replace with: <img src="feature-shared-view.png" alt="Shared family view"> -->
+                            <p class="screenshot-placeholder">Shared view screenshot</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon feature-icon-2">
@@ -919,6 +1103,12 @@
                     </div>
                     <h3>Gentle rhythms</h3>
                     <p>Morning, bedtime, and all the in-between. Flexible routines that bend with your family, not against it.</p>
+                    <div class="feature-screenshot">
+                        <div class="feature-screenshot-frame">
+                            <!-- Replace with: <img src="feature-routines.png" alt="Family routines"> -->
+                            <p class="screenshot-placeholder">Routines screenshot</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon feature-icon-3">
@@ -926,6 +1116,12 @@
                     </div>
                     <h3>Today's little things</h3>
                     <p>Simple shared tasks. Nothing complex. Just what needs doing today.</p>
+                    <div class="feature-screenshot">
+                        <div class="feature-screenshot-frame">
+                            <!-- Replace with: <img src="feature-tasks.png" alt="Shared tasks"> -->
+                            <p class="screenshot-placeholder">Tasks screenshot</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon feature-icon-4">
@@ -933,6 +1129,12 @@
                     </div>
                     <h3>Quiet confirmations</h3>
                     <p>Did it get done? No more guessing. No more chasing. Just calm, honest check-ins.</p>
+                    <div class="feature-screenshot">
+                        <div class="feature-screenshot-frame">
+                            <!-- Replace with: <img src="feature-confirmations.png" alt="Task confirmations"> -->
+                            <p class="screenshot-placeholder">Confirmations screenshot</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1026,16 +1228,34 @@
                     <div class="how-step-number">1</div>
                     <h3>Add your family</h3>
                     <p>Invite the people who share your everyday. It takes seconds.</p>
+                    <div class="how-step-screenshot">
+                        <div class="how-phone-frame">
+                            <!-- Replace with: <img src="how-add-family.png" alt="Add family members"> -->
+                            <div class="how-phone-placeholder">Screenshot</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="how-step fade-in">
                     <div class="how-step-number">2</div>
                     <h3>Add what matters</h3>
                     <p>Routines, tasks, the things to remember &mdash; everything that usually lives in your head.</p>
+                    <div class="how-step-screenshot">
+                        <div class="how-phone-frame">
+                            <!-- Replace with: <img src="how-add-content.png" alt="Add routines and tasks"> -->
+                            <div class="how-phone-placeholder">Screenshot</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="how-step fade-in">
                     <div class="how-step-number">3</div>
                     <h3>Let it hold the rest</h3>
                     <p>Youtine quietly holds it for you, so no one carries it all alone.</p>
+                    <div class="how-step-screenshot">
+                        <div class="how-phone-frame">
+                            <!-- Replace with: <img src="how-dashboard.png" alt="Youtine holding it all"> -->
+                            <div class="how-phone-placeholder">Screenshot</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="how-footer fade-in">
@@ -1053,22 +1273,43 @@
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card fade-in">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     <blockquote>"I finally stopped waking up at 3am remembering things I'd forgotten. It's all just&hellip; there."</blockquote>
-                    <p class="testimonial-author">Sarah M.</p>
-                    <p class="testimonial-role">Mum of two, beta tester</p>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-avatar">
+                            <!-- Replace with: <img src="sarah.jpg" alt="Sarah M."> -->
+                            <div class="testimonial-avatar-placeholder">SM</div>
+                        </div>
+                        <div class="testimonial-info">
+                            <p class="testimonial-author">Sarah M.</p>
+                            <p class="testimonial-role">Mum of two, beta tester</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="testimonial-card fade-in">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     <blockquote>"My partner kept saying I didn't help enough. Turns out I just couldn't see what needed doing. Now I can."</blockquote>
-                    <p class="testimonial-author">James T.</p>
-                    <p class="testimonial-role">Dad of three, beta tester</p>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-avatar">
+                            <!-- Replace with: <img src="james.jpg" alt="James T."> -->
+                            <div class="testimonial-avatar-placeholder">JT</div>
+                        </div>
+                        <div class="testimonial-info">
+                            <p class="testimonial-author">James T.</p>
+                            <p class="testimonial-role">Dad of three, beta tester</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="testimonial-card fade-in">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     <blockquote>"We tried every family app going. This is the first one that didn't feel like homework."</blockquote>
-                    <p class="testimonial-author">Priya &amp; Dev K.</p>
-                    <p class="testimonial-role">Parents of one, beta testers</p>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-avatar">
+                            <!-- Replace with: <img src="priya-dev.jpg" alt="Priya & Dev K."> -->
+                            <div class="testimonial-avatar-placeholder">PD</div>
+                        </div>
+                        <div class="testimonial-info">
+                            <p class="testimonial-author">Priya &amp; Dev K.</p>
+                            <p class="testimonial-role">Parents of one, beta testers</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
