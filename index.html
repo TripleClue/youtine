@@ -238,15 +238,17 @@
             flex-wrap: wrap;
         }
 
-        .store-badge {
-            height: 52px;
-            transition: transform 0.2s, opacity 0.2s;
-            cursor: pointer;
+        /* ===== STORE BADGES =====
+           To change badge size, update --badge-height below */
+        :root {
+            --badge-height: 48px;
         }
 
-        .store-badge[alt*="Google Play"] {
-            height: 76px;
-            margin: -12px 0;
+        .store-badge {
+            height: var(--badge-height);
+            width: auto;
+            transition: transform 0.2s, opacity 0.2s;
+            cursor: pointer;
         }
 
         .store-badge:hover {
@@ -261,10 +263,22 @@
         }
 
         /* Hero phone mockup — right side */
+        /* ===== HERO IMAGE SIZE =====
+           To change the hero image size, update --hero-image-width below */
+        :root {
+            --hero-image-width: 480px;
+        }
+
         .hero-mockup {
             flex-shrink: 0;
             display: flex;
             justify-content: center;
+        }
+
+        .hero-image {
+            width: var(--hero-image-width);
+            max-width: 100%;
+            display: block;
         }
 
         .phone-frame {
@@ -981,11 +995,6 @@
                 text-align: center;
             }
 
-            .hero-mockup .phone-frame {
-                width: 220px;
-                height: 440px;
-            }
-
             .features-grid {
                 grid-template-columns: 1fr;
             }
@@ -1075,7 +1084,8 @@
                     <p class="hero-micro">No pressure. No complexity. Just a gentler way to stay on top of things together.</p>
                 </div>
                 <div class="hero-mockup fade-in">
-                    <img src="images/screenshot-hero.png" alt="Youtine app home screen" style="max-width:320px;width:100%;display:block;">
+                    <!-- Hero image size: adjust --hero-image-width below -->
+                    <img src="images/screenshot-hero.png" alt="Youtine app home screen" class="hero-image">
                 </div>
             </div>
         </div>
@@ -1339,7 +1349,7 @@
             <p>Share the everyday things with your family, so no one carries it all alone. Free to try. No credit card needed.</p>
             <div class="hero-cta">
                 <a href="#" aria-label="Download on the App Store">
-                    <img class="store-badge" src="images/badge-app-store.png" alt="Download on the App Store">
+                    <img class="store-badge" src="images/badge-app-store.svg" alt="Download on the App Store">
                 </a>
                 <a href="#" aria-label="Get it on Google Play">
                     <img class="store-badge" src="images/badge-google-play.png" alt="Get it on Google Play">
