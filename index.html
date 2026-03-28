@@ -3,8 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youtine - For all the invisible work</title>
-    <meta name="description" content="A warm, shared space that holds the invisible work — so you don't have to carry it all in your head. Keep what matters in one place, so life feels a little lighter.">
+    <title>Youtine - Family Routines &amp; Shared Tasks | Reduce the Mental Load</title>
+    <meta name="description" content="Youtine helps families share the mental load — routines, tasks, and everyday plans in one calm, shared space. Free to try. No setup marathon.">
+    <link rel="canonical" href="https://youtine.app/">
+    <link rel="alternate" hreflang="en" href="https://youtine.app/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://youtine.app/">
+    <meta property="og:title" content="Youtine - Family Routines &amp; Shared Tasks | Reduce the Mental Load">
+    <meta property="og:description" content="Youtine helps families share the mental load — routines, tasks, and everyday plans in one calm, shared space. Free to try. No setup marathon.">
+    <meta property="og:image" content="https://youtine.app/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Youtine">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Youtine — Family Routines &amp; Shared Tasks | Reduce the Mental Load">
+    <meta name="twitter:description" content="Youtine helps families share the mental load — routines, tasks, and everyday plans in one calm, shared space. Free to try. No setup marathon.">
+    <meta name="twitter:image" content="https://youtine.app/images/og-image.png">
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Youtine",
+      "alternateName": "Youtine: Family Routines & Shared Tasks",
+      "description": "Youtine helps families share the mental load — routines, tasks, and everyday plans in one calm, shared space.",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "description": "Free to download with optional premium subscription"
+      },
+      "url": "https://youtine.app/",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Youtine BV"
+      }
+    }
+    </script>
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Youtine BV",
+      "url": "https://youtine.app/",
+      "logo": "https://youtine.app/images/logo.png",
+      "email": "privacy@youtine.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Amsterdam",
+        "addressCountry": "NL"
+      },
+      "sameAs": [
+        "https://www.instagram.com/youtine",
+        "https://www.facebook.com/youtine",
+        "https://www.tiktok.com/@youtine"
+      ]
+    }
+    </script>
+
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
     <!-- No external fonts needed -->
@@ -262,9 +329,7 @@
             font-style: italic;
         }
 
-        /* Hero phone mockup — right side */
-        /* ===== HERO IMAGE SIZE =====
-           To change the hero image size, update --hero-image-width below */
+        
         :root {
             --hero-image-width: 480px;
         }
@@ -1037,6 +1102,92 @@
             }
         }
 
+
+        /* ===== FAQ ===== */
+        .faq {
+            background: var(--color-bg);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-header .label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-sage);
+            margin-bottom: 1rem;
+        }
+
+        .faq-header h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            line-height: 1.2;
+        }
+
+        .faq-list {
+            max-width: var(--content-narrow);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: var(--color-bg-warm);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .faq-item[open] {
+            border-left: 3px solid var(--color-accent);
+        }
+
+        .faq-question {
+            font-family: var(--font-serif);
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-text);
+        }
+
+        .faq-question::-webkit-details-marker { display: none; }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--color-accent);
+            flex-shrink: 0;
+            margin-left: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .faq-item[open] .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            line-height: 1.75;
+            padding: 0 1.5rem 1.25rem;
+            margin-bottom: 0 !important;
+        }
+
+        .faq-answer + .faq-answer {
+            padding-top: 0;
+            margin-top: -0.5rem;
+        }
+
         /* ===== ANIMATIONS ===== */
         .fade-in {
             opacity: 0;
@@ -1072,7 +1223,7 @@
                 <div class="hero-text">
                     <div class="hero-badge">Hold less. Live more.</div>
                     <h1>For all the invisible work.</h1>
-                    <p class="hero-sub">A warm, shared space for your family's plans, routines and everyday remembering. Built to reduce mental load, not add to it.</p>
+                    <p class="hero-sub">A warm, shared space for your plans, routines and everyday remembering. Built to reduce mental load, not add to it.</p>
                     <div class="hero-cta">
                         <a href="#" aria-label="Download on the App Store">
                             <img class="store-badge" src="images/badge-app-store.svg" alt="Download on the App Store">
@@ -1085,7 +1236,7 @@
                 </div>
                 <div class="hero-mockup fade-in">
                     <!-- Hero image size: adjust --hero-image-width below -->
-                    <img src="images/screenshot-hero.png" alt="Youtine app home screen" class="hero-image">
+                    <img src="images/screenshot-hero.png" alt="Youtine family app home screen showing shared routines and tasks" class="hero-image">
                 </div>
             </div>
         </div>
@@ -1106,7 +1257,7 @@
     <section class="section what-is">
         <div class="what-is-inner fade-in">
             <p class="label">What Youtine Actually Is</p>
-            <h2>A partner, not a system.</h2>
+            <h2>A shared family planner that feels like a partner, not a system.</h2>
             <p>Think of it as a kitchen pinboard for modern families. Not another app to manage &mdash; just a warm, shared space that quietly holds the invisible work.</p>
             <p>Keep what matters in one place, so life feels a little lighter.</p>
             <p class="metaphor">A quieter mind for your family.</p>
@@ -1118,7 +1269,7 @@
         <div class="section-inner">
             <div class="features-header fade-in">
                 <p class="label">What It Does</p>
-                <h2>Keep what matters in one place.</h2>
+                <h2>Family routines, shared tasks, and daily plans — all in one place.</h2>
             </div>
             <div class="features-grid">
                 <div class="feature-card fade-in">
@@ -1129,7 +1280,7 @@
                     <p>One shared view for your whole family. No more scattered notes, texts, and half-remembered conversations.</p>
                     <div class="feature-screenshot">
                         <div class="feature-screenshot-frame">
-                            <img src="images/screenshot-feature-shared.png" alt="Shared family view">
+                            <img src="images/screenshot-feature-shared.png" alt="Youtine shared family view showing routines, tasks and plans in one place">
                         </div>
                     </div>
                 </div>
@@ -1141,7 +1292,7 @@
                     <p>Morning, bedtime, and all the in-between. Flexible routines that bend with your family, not against it.</p>
                     <div class="feature-screenshot">
                         <div class="feature-screenshot-frame">
-                            <img src="images/screenshot-feature-routines.png" alt="Family routines">
+                            <img src="images/screenshot-feature-routines.png" alt="Youtine family routines feature — morning and bedtime routines for the whole family">
                         </div>
                     </div>
                 </div>
@@ -1153,7 +1304,7 @@
                     <p>Simple shared tasks. Nothing complex. Just what needs doing today.</p>
                     <div class="feature-screenshot">
                         <div class="feature-screenshot-frame">
-                            <img src="images/screenshot-feature-tasks.png" alt="Shared tasks">
+                            <img src="images/screenshot-feature-tasks.png" alt="Youtine shared tasks feature — simple daily tasks shared between family members">
                         </div>
                     </div>
                 </div>
@@ -1165,7 +1316,7 @@
                     <p>Did it get done? No more guessing. No more chasing. Just calm, honest check-ins.</p>
                     <div class="feature-screenshot">
                         <div class="feature-screenshot-frame">
-                            <img src="images/screenshot-feature-confirmations.png" alt="Task confirmations">
+                            <img src="images/screenshot-feature-confirmations.png" alt="Youtine quiet confirmations feature — one-tap check-ins to confirm tasks are done">
                         </div>
                     </div>
                 </div>
@@ -1263,7 +1414,7 @@
                     <p>Invite the people who share your everyday. It takes seconds.</p>
                     <div class="how-step-screenshot">
                         <div class="how-phone-frame">
-                            <img src="images/screenshot-how-add-family.png" alt="Add family members" style="width:100%;height:100%;object-fit:cover;">
+                            <img src="images/screenshot-how-add-family.png" alt="Youtine onboarding — invite family members to share routines and tasks" style="width:100%;height:100%;object-fit:cover;">
                         </div>
                     </div>
                 </div>
@@ -1273,7 +1424,7 @@
                     <p>Routines, tasks, the things to remember &mdash; everything that usually lives in your head.</p>
                     <div class="how-step-screenshot">
                         <div class="how-phone-frame">
-                            <img src="images/screenshot-how-add-content.png" alt="Add routines and tasks" style="width:100%;height:100%;object-fit:cover;">
+                            <img src="images/screenshot-how-add-content.png" alt="Youtine — adding shared routines and tasks to reduce family mental load" style="width:100%;height:100%;object-fit:cover;">
                         </div>
                     </div>
                 </div>
@@ -1283,7 +1434,7 @@
                     <p>Youtine quietly holds it for you, so no one carries it all alone.</p>
                     <div class="how-step-screenshot">
                         <div class="how-phone-frame">
-                            <img src="images/screenshot-how-dashboard.png" alt="Youtine dashboard" style="width:100%;height:100%;object-fit:cover;">
+                            <img src="images/screenshot-how-dashboard.png" alt="Youtine family dashboard — a calm shared space for all your household plans" style="width:100%;height:100%;object-fit:cover;">
                         </div>
                     </div>
                 </div>
@@ -1341,6 +1492,88 @@
             </div>
         </div>
     </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+        <div class="section-inner">
+            <div class="faq-header fade-in">
+                <p class="label">Questions</p>
+                <h2>Things people ask.</h2>
+            </div>
+            <div class="faq-list">
+                <details class="faq-item fade-in">
+                    <summary class="faq-question">What is Youtine?</summary>
+                    <p class="faq-answer">Youtine is a family organiser app built around reducing mental load - the invisible cognitive work of keeping a household running. It brings routines, shared tasks, and everyday plans into one calm, shared space. It's not a productivity app. It's a warm place to hold the things that usually live in one person's head.</p>
+                </details>
+                <details class="faq-item fade-in">
+                    <summary class="faq-question">Is Youtine free?</summary>
+                    <p class="faq-answer">Yes - Youtine is free to download and use. A premium subscription unlocks additional features including unlimited family members, full routine customisation, and priority notifications. There's a 14-day free trial on premium, with no credit card required.</p>
+                </details>
+                <details class="faq-item fade-in">
+                    <summary class="faq-question">How is Youtine different from a shared calendar?</summary>
+                    <p class="faq-answer">A shared calendar shows you what's happening. Youtine holds everything that makes it happen - the routines, the daily tasks, the check-ins that confirm things actually got done. It's less about scheduling and more about sharing the invisible work underneath the schedule.</p>
+                </details>
+                <details class="faq-item fade-in">
+                    <summary class="faq-question">What does "mental load" mean?</summary>
+                    <p class="faq-answer">Mental load refers to the invisible cognitive work of managing a household - keeping track of appointments, school forms, shopping, routines, birthdays, and the thousand small things that need to happen. Research shows that 73% of this invisible mental work falls on one person in most households. Youtine is built to help share it.</p>
+                </details>
+                <details class="faq-item fade-in">
+                    <summary class="faq-question">Can I use Youtine with my co-parent, housemate, or extended family?</summary>
+                    <p class="faq-answer">Yes. Youtine works for any household sharing plans and responsibilities — couples with or without children, co-parents, multi-generational families, and roommates. If you share a home and an invisible workload, Youtine was made for you.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQPage Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Youtine?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Youtine is a family organiser app built around reducing mental load — the invisible cognitive work of keeping a household running. It brings routines, shared tasks, and everyday plans into one calm, shared space. Note: Youtine (youtine.app) is a family app made by Youtine BV in Amsterdam, separate from a German fitness app that shares the same name."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Youtine free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — Youtine is free to download and use. A premium subscription unlocks additional features. There's a 14-day free trial on premium, with no credit card required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Youtine different from a shared calendar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A shared calendar shows you what's happening. Youtine holds everything that makes it happen — the routines, the daily tasks, the check-ins that confirm things actually got done. It's less about scheduling and more about sharing the invisible work underneath the schedule."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does mental load mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mental load refers to the invisible cognitive work of managing a household. Research shows that 73% of this invisible mental work falls on one person in most households. Youtine is built to help share it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Youtine with my co-parent, housemate, or extended family?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Youtine works for any household sharing plans and responsibilities — couples with or without children, co-parents, multi-generational families, and roommates."
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- FINAL CTA -->
     <section class="section final-cta" id="download">
