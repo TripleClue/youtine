@@ -58,7 +58,7 @@
       "name": "Youtine BV",
       "url": "https://youtine.app/",
       "logo": "https://youtine.app/images/logo.png",
-      "email": "privacy@youtine.com",
+      "email": "privacy@youtine.app",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Amsterdam",
@@ -1686,7 +1686,7 @@
 
     <!-- COOKIE CONSENT BANNER -->
     <div id="cookie-banner" role="dialog" aria-modal="true" aria-label="Cookie consent" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:200; padding:0 1.5rem 1.5rem; pointer-events:none;">
-        <div style="max-width:720px; margin:0 auto; background:#fff; border-radius:20px; padding:2rem; box-shadow:0 8px 40px rgba(0,0,0,0.12); border-top:3px solid #BC8DFF; pointer-events:all; animation:cookieUp 0.4s ease;">
+        <div style="max-width:720px; margin:0 auto; background:#fff; border-radius:10px; padding:2rem; box-shadow:0 8px 40px rgba(0,0,0,0.12); pointer-events:all; animation:cookieUp 0.4s ease;">
 
             <p style="font-family:var(--font-serif); font-size:1.15rem; font-weight:600; color:var(--color-text); margin-bottom:0.5rem;">A quiet word about cookies.</p>
             <p style="font-size:0.9rem; color:var(--color-text-secondary); line-height:1.65; margin-bottom:1.25rem;">We use a small number of tracking technologies to keep Youtine running and to understand how it's being used — so we can make it better. You're in control of what you share.</p>
@@ -1695,7 +1695,7 @@
             <div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1.5rem;">
 
                 <!-- Strictly necessary (locked on) -->
-                <div style="display:flex; align-items:center; gap:1rem; background:var(--color-bg-warm); border-radius:12px; padding:0.85rem 1rem;">
+                <div style="display:flex; align-items:center; gap:1rem; background:var(--color-bg-warm); border-radius:10px; padding:0.85rem 1rem;">
                     <div style="flex:1;">
                         <div style="font-size:0.9rem; font-weight:600; color:var(--color-text);">Strictly necessary</div>
                         <div style="font-size:0.8rem; color:var(--color-text-light);">Keeps the app working. Always on.</div>
@@ -1706,11 +1706,11 @@
                 </div>
 
                 <!-- Analytics (toggleable) -->
-                <label for="cookie-analytics" style="display:flex; align-items:center; gap:1rem; background:var(--color-bg-warm); border-radius:12px; padding:0.85rem 1rem; cursor:pointer;">
+                <label for="cookie-analytics" style="display:flex; align-items:center; gap:1rem; background:var(--color-bg-warm); border-radius:10px; padding:0.85rem 1rem; cursor:pointer;">
                     <input type="checkbox" id="cookie-analytics" style="display:none;">
                     <div style="flex:1;">
-                        <div style="font-size:0.9rem; font-weight:600; color:var(--color-text);">Analytics (Google Analytics)</div>
-                        <div style="font-size:0.8rem; color:var(--color-text-light);">Helps us understand how people use our website, so we can improve it. Data is processed by Google (may include US transfer).</div>
+                        <div style="font-size:0.9rem; font-weight:600; color:var(--color-text);">Analytics (Mixpanel)</div>
+                        <div style="font-size:0.8rem; color:var(--color-text-light);">Helps us understand how people use our website, so we can improve it. Data is processed by Mixpanel (may include US transfer).</div>
                     </div>
                     <div id="analytics-toggle" style="flex-shrink:0; width:44px; height:26px; border-radius:100px; background:var(--color-bg-soft); border:1.5px solid var(--color-border); position:relative; transition:background 0.2s;">
                         <div id="analytics-knob" style="position:absolute; top:3px; left:3px; width:18px; height:18px; border-radius:50%; background:white; box-shadow:0 1px 3px rgba(0,0,0,0.15); transition:transform 0.2s;"></div>
