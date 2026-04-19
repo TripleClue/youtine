@@ -575,25 +575,36 @@
         }
 
         .feature-card {
-            background: var(--color-bg-warm);
-            border-radius: 16px;
-            padding: 1.5rem;
-            transition: transform 0.25s ease;
+            background: #FFFFFF;
+            border-radius: 10px;
+            padding: 16px 16px 16px 20px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
             display: flex;
             flex-direction: column;
-            border-top: 3px solid transparent;
+            position: relative;
         }
 
-        .feature-card:nth-child(odd) {
-            border-top-color: var(--color-accent);
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            bottom: 12px;
+            width: 4px;
+            border-radius: 0;
         }
 
-        .feature-card:nth-child(even) {
-            border-top-color: var(--color-accent-warm);
+        .feature-card:nth-child(odd)::before {
+            background: var(--color-accent);
+        }
+
+        .feature-card:nth-child(even)::before {
+            background: var(--color-accent-warm);
         }
 
         .feature-card:hover {
             transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
         }
 
         .feature-icon {
@@ -743,23 +754,32 @@
         }
 
         .who-card {
-            background: var(--color-bg-warm);
-            border-radius: 16px;
-            padding: 2rem;
+            background: #FFFFFF;
+            border-radius: 10px;
+            padding: 16px 16px 16px 20px;
             text-align: center;
-            border-bottom: 3px solid transparent;
+            position: relative;
         }
 
-        .who-card:nth-child(1) {
-            border-bottom-color: var(--color-accent);
+        .who-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            bottom: 12px;
+            width: 4px;
         }
 
-        .who-card:nth-child(2) {
-            border-bottom-color: var(--color-accent-warm);
+        .who-card:nth-child(1)::before {
+            background: var(--color-accent);
         }
 
-        .who-card:nth-child(3) {
-            border-bottom-color: var(--color-accent);
+        .who-card:nth-child(2)::before {
+            background: var(--color-accent-warm);
+        }
+
+        .who-card:nth-child(3)::before {
+            background: var(--color-accent);
         }
 
         .who-card-icon {
@@ -928,10 +948,20 @@
         }
 
         .testimonial-card {
-            background: var(--color-bg-warm);
-            border-radius: 16px;
-            padding: 2rem;
-            border-left: 3px solid var(--color-accent);
+            background: #FFFFFF;
+            border-radius: 10px;
+            padding: 16px 16px 16px 20px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            bottom: 12px;
+            width: 4px;
+            background: var(--color-accent);
         }
 
         .testimonial-card blockquote {
