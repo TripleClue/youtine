@@ -34,7 +34,7 @@
     '<div id="cookie-banner" role="dialog" aria-modal="true" aria-label="Cookie consent" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:200; padding:0 1.5rem 1.5rem; pointer-events:none;">' +
       '<div style="max-width:720px; margin:0 auto; background:#fff; border-radius:10px; padding:2rem; box-shadow:0 8px 40px rgba(0,0,0,0.12); pointer-events:all; animation:cookieUp 0.4s ease;">' +
         '<p style="font-family:var(--font-serif, var(--font-sans)); font-size:1.15rem; font-weight:600; color:var(--color-text); margin-bottom:0.5rem;">A quiet word about cookies.</p>' +
-        '<p style="font-size:0.9rem; color:var(--color-text-secondary); line-height:1.65; margin-bottom:1.25rem;">We use a small number of tracking technologies to keep Youtine running and to understand how it’s being used — so we can make it better. You’re in control of what you share.</p>' +
+        '<p style="font-size:0.9rem; color:var(--color-text-secondary); line-height:1.65; margin-bottom:1.25rem;">We use a small number of tracking technologies to keep Youtine running and to understand how it’s being used, so we can make it better. You’re in control of what you share.</p>' +
         '<div style="display:flex; flex-direction:column; gap:0.75rem; margin-bottom:1.5rem;">' +
           '<div style="display:flex; align-items:center; gap:1rem; background:var(--color-bg-warm); border-radius:10px; padding:0.85rem 1rem;">' +
             '<div style="flex:1;">' +

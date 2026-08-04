@@ -1,13 +1,13 @@
 ---
 title: "Welcome to the Youtine blog"
 date: 2026-08-04
-description: "A little corner for writing about the invisible work of running a family — and how to share it."
+description: "A little corner for writing about the invisible work of running a family, and how to share it."
 author: The Youtine team
 ---
 
 We started Youtine because of a quiet, familiar feeling: that one person in a household is usually holding everything in their head. The appointments, the forms, the shopping, the birthdays, the sports kit. The remembering.
 
-This blog is where we'll write about that — the **mental load** — and the small, practical ways families can share it.
+This blog is where we'll write about that (the **mental load**) and the small, practical ways families can share it.
 
 ## What you can expect here
 
