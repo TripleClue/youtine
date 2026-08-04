@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -245,21 +245,39 @@
             .policy-table th, .policy-table td { padding: 0.5rem; }
         }
     </style>
-<script type="text/javascript">
-    (function(e,c){if(!c.__SV){var l,h;window.mixpanel=c;c._i=[];c.init=function(q,r,f){function t(d,a){var g=a.split(".");2==g.length&&(d=d[g[0]],a=g[1]);d[a]=function(){d.push([a].concat(Array.prototype.slice.call(arguments,0)))}}var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";b.people=b.people||[];b.toString=function(d){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);d||(a+=" (stub)");return a};b.people.toString=function(){return b.toString(1)+".people (stub)"};l="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders start_session_recording stop_session_recording people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
-    for(h=0;h<l.length;h++)t(b,l[h]);var n="set set_once union unset remove delete".split(" ");b.get_group=function(){function d(p){a[p]=function(){b.push([g,[p].concat(Array.prototype.slice.call(arguments,0))])}}for(var a={},g=["get_group"].concat(Array.prototype.slice.call(arguments,0)),m=0;m<n.length;m++)d(n[m]);return a};c._i.push([q,r,f])};c.__SV=1.2;var k=e.createElement("script");k.type="text/javascript";k.async=!0;k.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===
-    e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=e.getElementsByTagName("script")[0];e.parentNode.insertBefore(k,e)}})(document,window.mixpanel||[])
-  
-    
-    mixpanel.init('6a7cfc7fb8bc9a5bf2f8d68459cf37a2', {
-      autocapture: true,
-      record_sessions_percent: 100,
-      api_host: 'https://api-eu.mixpanel.com',
-    })
-  mixpanel.track("Page Viewed", {
-      page: window.location.pathname
-    });
-  </script>
+<!-- Analytics (Mixpanel) - loaded only after the visitor consents to analytics cookies -->
+<script>
+  (function () {
+    var CONSENT_KEY = 'youtine_cookie_consent';
+
+    function analyticsConsented() {
+      try {
+        var c = JSON.parse(localStorage.getItem(CONSENT_KEY));
+        return !!(c && c.analytics);
+      } catch (e) { return false; }
+    }
+
+    // Loads Mixpanel and records the page view. Safe to call more than once.
+    window.loadMixpanel = function () {
+      if (window.__mixpanelLoaded) return;
+      window.__mixpanelLoaded = true;
+
+      (function(e,c){if(!c.__SV){var l,h;window.mixpanel=c;c._i=[];c.init=function(q,r,f){function t(d,a){var g=a.split(".");2==g.length&&(d=d[g[0]],a=g[1]);d[a]=function(){d.push([a].concat(Array.prototype.slice.call(arguments,0)))}}var b=c;"undefined"!==typeof f?b=c[f]=[]:f="mixpanel";b.people=b.people||[];b.toString=function(d){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);d||(a+=" (stub)");return a};b.people.toString=function(){return b.toString(1)+".people (stub)"};l="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders start_session_recording stop_session_recording people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+      for(h=0;h<l.length;h++)t(b,l[h]);var n="set set_once union unset remove delete".split(" ");b.get_group=function(){function d(p){a[p]=function(){b.push([g,[p].concat(Array.prototype.slice.call(arguments,0))])}}for(var a={},g=["get_group"].concat(Array.prototype.slice.call(arguments,0)),m=0;m<n.length;m++)d(n[m]);return a};c._i.push([q,r,f])};c.__SV=1.2;var k=e.createElement("script");k.type="text/javascript";k.async=!0;k.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===
+      e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=e.getElementsByTagName("script")[0];e.parentNode.insertBefore(k,e)}})(document,window.mixpanel||[]);
+
+      mixpanel.init('6a7cfc7fb8bc9a5bf2f8d68459cf37a2', {
+        autocapture: true,
+        record_sessions_percent: 100,
+        api_host: 'https://api-eu.mixpanel.com'
+      });
+      mixpanel.track('Page Viewed', { page: window.location.pathname });
+    };
+
+    // Only load if the visitor has already granted analytics consent.
+    if (analyticsConsented()) window.loadMixpanel();
+  })();
+</script>
   
 </head>
 <body>
@@ -270,6 +288,7 @@
             <ul class="nav-links">
                 <li><a href="/#features">Features</a></li>
                 <li><a href="/#testimonials">Stories</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li><a href="/signup" class="nav-cta">Join the waitlist</a></li>
             </ul>
         </div>
@@ -279,7 +298,7 @@
         <div class="page-hero-inner">
             <span class="page-label">Legal</span>
             <h1>Privacy Policy &amp; GDPR</h1>
-            <p class="page-hero-meta">Last updated: March 2026</p>
+            <p class="page-hero-meta">Last updated: August 2026</p>
         </div>
     </div>
 
@@ -291,7 +310,7 @@
                 <div class="contact-box">
                     <p><strong>Youtine BV</strong></p>
                     <p>Amsterdam, Netherlands</p>
-                    <p>For privacy-related questions or requests: <a href="mailto:privacy@youtine.com">privacy@youtine.com</a></p>
+                    <p>For privacy-related questions or requests: <a href="mailto:privacy@youtine.app">privacy@youtine.app</a></p>
                 </div>
             </div>
 
@@ -308,19 +327,11 @@
                     <tbody>
                         <tr>
                             <td><strong>Account information</strong></td>
-                            <td>Name, email address, and password provided upon registration</td>
+                            <td>Name, email address, date of birth, and password. These are entered by the account holder when setting up the family — including for any family members they add.</td>
                         </tr>
                         <tr>
-                            <td><strong>Photos and media</strong></td>
-                            <td>Media files you upload or share, if you grant permission</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Location data</strong></td>
-                            <td>Precise location, only if you grant permission through your device</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Calendar data</strong></td>
-                            <td>Calendar entries and related information, accessed only with your permission</td>
+                            <td><strong>Profile photo</strong></td>
+                            <td>An optional profile picture, if a user chooses to upload one</td>
                         </tr>
                         <tr>
                             <td><strong>Push notification tokens</strong></td>
@@ -332,7 +343,7 @@
                         </tr>
                         <tr>
                             <td><strong>Usage and analytics data</strong></td>
-                            <td>Information about your interactions and app activity, collected via Mixpanel (in-app only)</td>
+                            <td>Information about your interactions and activity, collected via Mixpanel in the app and — only with your consent — on our website</td>
                         </tr>
                     </tbody>
                 </table>
@@ -342,8 +353,8 @@
                 <h2><span class="section-num">3</span> Legal Basis for Processing</h2>
                 <p>We process your personal data on the following bases:</p>
                 <ul>
-                    <li><strong>Consent</strong> — for optional features involving location, camera access, calendar integration, and notifications.</li>
-                    <li><strong>Contract performance</strong> — for core account setup, personalised user experiences, and Service operations necessary to fulfil our contract with you.</li>
+                    <li><strong>Consent</strong> — for optional features such as push notifications, and, where required by law, for processing the data of children in a family (given by the account holder on their behalf).</li>
+                    <li><strong>Contract performance</strong> — for core account setup and the Service operations necessary to fulfil our contract with you.</li>
                     <li><strong>Legitimate interests</strong> — for analytics and security monitoring, provided those interests are not overridden by your fundamental rights and freedoms.</li>
                 </ul>
             </div>
@@ -352,10 +363,9 @@
                 <h2><span class="section-num">4</span> How We Use Your Data</h2>
                 <ul>
                     <li>To operate and maintain your account and provide the Youtine Service</li>
-                    <li>To personalise your app experience</li>
+                    <li>To share routines, tasks, and plans between members of your family or household</li>
                     <li>To send you relevant notifications, when you opt in</li>
-                    <li>To allow sharing of photos, location data, and calendars within your groups</li>
-                    <li>To analyse usage patterns and improve our products (using Mixpanel, in-app only)</li>
+                    <li>To analyse usage patterns and improve our products (using Mixpanel — in the app, and on our website only with your consent)</li>
                     <li>To secure our Service from misuse or unauthorised access</li>
                 </ul>
             </div>
@@ -379,8 +389,8 @@
                         </tr>
                         <tr>
                             <td><strong>Mixpanel</strong></td>
-                            <td>In-app analytics (how the app is used)</td>
-                            <td>May involve US processing; protected by SCCs</td>
+                            <td>Product and website analytics (how the app and site are used)</td>
+                            <td>EU data residency endpoint; may involve US processing, protected by SCCs</td>
                         </tr>
                         <tr>
                             <td><strong>Apple / Google</strong></td>
@@ -399,14 +409,19 @@
             <div class="policy-section">
                 <h2><span class="section-num">7</span> Data Retention</h2>
                 <ul>
-                    <li><strong>Account data</strong> — retained for as long as your account is active. Personal data is permanently deleted from primary systems within 30 days of account deletion.</li>
-                    <li><strong>Location and calendar data</strong> — retained only as long as necessary to provide the relevant feature; deleted upon request or feature deactivation.</li>
+                    <li><strong>Account data</strong> — including name, email, date of birth, and profile photo, retained for as long as your account is active. Personal data is permanently deleted from primary systems within 30 days of account deletion.</li>
                     <li><strong>Analytics data</strong> — retained according to Mixpanel's standard retention policy; can be erased upon request or opt-out.</li>
                 </ul>
             </div>
 
             <div class="policy-section">
-                <h2><span class="section-num">8</span> Your Rights Under GDPR</h2>
+                <h2><span class="section-num">8</span> Children's Data</h2>
+                <p>Youtine is a family app, and a family set up by an account holder may include children. The account holder creates and manages the family, enters the limited information we hold about each member (name, email, date of birth, and an optional profile photo), and is responsible for providing any consent required by law on a child's behalf.</p>
+                <p>We keep the data we hold about children to the minimum needed to run the family's shared routines, tasks, and plans. We do not use children's data for advertising, and we do not build marketing profiles of any user. If you believe a child's data has been provided to us without the proper authority, contact us at <a href="mailto:privacy@youtine.app">privacy@youtine.app</a> and we will address it.</p>
+            </div>
+
+            <div class="policy-section">
+                <h2><span class="section-num">9</span> Your Rights Under GDPR</h2>
                 <p>You have the following rights in relation to your personal data:</p>
                 <ul>
                     <li>Right to <strong>access</strong> your personal data</li>
@@ -416,11 +431,11 @@
                     <li>Right to <strong>data portability</strong> (receive your data in a structured format)</li>
                     <li>Right to <strong>withdraw consent</strong> at any time for features that rely on consent</li>
                 </ul>
-                <p>To exercise any of these rights, email your request to <a href="mailto:privacy@youtine.com">privacy@youtine.com</a>.</p>
+                <p>To exercise any of these rights, email your request to <a href="mailto:privacy@youtine.app">privacy@youtine.app</a>.</p>
             </div>
 
             <div class="policy-section">
-                <h2><span class="section-num">9</span> Right to Complain</h2>
+                <h2><span class="section-num">10</span> Right to Complain</h2>
                 <p>If you are not satisfied with our response, you have the right to submit a complaint to the Dutch Data Protection Authority (<em>Autoriteit Persoonsgegevens</em>). For more information, visit <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener">autoriteitpersoonsgegevens.nl</a>.</p>
             </div>
 
@@ -431,6 +446,7 @@
         <div class="footer-inner">
             <a href="/" class="footer-logo"><img src="images/logo-white.png" alt="Youtine" height="40" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';"><span style="display:none;">Youtine</span></a>
             <ul class="footer-links">
+                <li><a href="/blog/">Blog</a></li>
                 <li><a href="mailto:hello@youtine.app">Contact Us</a></li>
                 <li><a href="/privacy">Privacy Policy &amp; GDPR</a></li>
                 <li><a href="/cookies">Cookie Policy</a></li>
@@ -453,5 +469,7 @@
         </div>
     </footer>
 
+    <!-- Cookie consent banner (shared) -->
+    <script src="cookie-consent.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+# ── Youtine site config (GitHub Pages / Jekyll) ─────────────────────────────
+# The existing hand-written HTML pages have no front matter, so Jekyll copies
+# them through untouched. Only the blog (this config + _layouts + _posts) is
+# generated. To publish a post: drop a Markdown file in _posts/ and push.
+
+title: Youtine
+description: >-
+  Notes from Youtine on sharing the mental load — routines, shared tasks,
+  and everyday plans for families.
+url: "https://youtine.app"
+baseurl: ""
+lang: en-GB
+
+# Posts are published at youtine.app/blog/<filename-without-date>/
+permalink: /blog/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed      # RSS feed for the blog
+  - jekyll-seo-tag   # <title>, meta description, canonical, Open Graph, JSON-LD
+  - jekyll-sitemap   # auto-generates /sitemap.xml (all pages + posts) on every build
+
+# Put the RSS feed at /blog/feed.xml
+feed:
+  path: /blog/feed.xml
+
+# Every post uses the "post" layout and a default social image unless overridden
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      image: /images/og-image.png
+  # signup is noindex, so keep it out of the auto-generated sitemap
+  - scope:
+      path: "signup.html"
+    values:
+      sitemap: false
+
+# Don't let Jekyll copy build/tooling files into the published site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - scratchpad
+  - README.md
+  - .DS_Store

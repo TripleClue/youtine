@@ -1,0 +1,32 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+description: Notes from Youtine on sharing the mental load — routines, shared tasks, and everyday plans for families.
+---
+<div class="page-hero">
+    <div class="page-hero-inner">
+        <span class="page-label">Blog</span>
+        <h1>Notes on the invisible work.</h1>
+        <p class="page-hero-meta">Ideas on sharing the mental load, from the team building Youtine.</p>
+    </div>
+</div>
+<div class="page-content">
+    <div class="page-content-inner">
+        {% if site.posts.size > 0 %}
+        <ul class="post-list">
+            {% for post in site.posts %}
+            <li class="post-list-item">
+                <a href="{{ post.url }}">
+                    <span class="post-list-date">{{ post.date | date: "%-d %B %Y" }}</span>
+                    <span class="post-list-title">{{ post.title }}</span>
+                    {% if post.description %}<span class="post-list-desc">{{ post.description }}</span>{% endif %}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="post-empty">No posts yet — check back soon.</p>
+        {% endif %}
+    </div>
+</div>
