@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 660" width="880" height="660" role="img" aria-label="Concept: the shape of the week ahead and how the load is split across the group">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#F8F7F2"/><stop offset="1" stop-color="#EAE8E2"/>
+  </linearGradient>
+  <filter id="sh" x="-40%" y="-40%" width="180%" height="180%">
+    <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity="0.10"/>
+  </filter>
+  <clipPath id="dist"><rect x="92" y="474" width="692" height="18" rx="9"/></clipPath>
+</defs>
+<style>
+  text{font-family:'PP Frama',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+  .t{fill:#000}.g{fill:#7D7D7D}.b{font-weight:600}
+</style>
+<rect width="880" height="660" fill="url(#bg)"/>
+<circle cx="330" cy="230" r="220" fill="#BC8DFF" opacity="0.05"/>
+<circle cx="760" cy="560" r="130" fill="#F59421" opacity="0.04"/>
+
+<text x="92" y="86" fill="#BC8DFF" font-size="12" class="b" letter-spacing="1.5">THE WEEK AHEAD</text>
+<g filter="url(#sh)"><rect x="618" y="62" width="166" height="34" rx="17" fill="#FFFFFF"/></g>
+<text x="701" y="84" text-anchor="middle" class="g" font-size="12">+1 event, +3 tasks</text>
+
+<!-- peak callout -->
+<g filter="url(#sh)"><rect x="264" y="158" width="140" height="30" rx="15" fill="#FFFFFF"/></g>
+<text x="334" y="178" text-anchor="middle" fill="#BC8DFF" font-size="12" class="b">Peak Wednesday</text>
+<line x1="334" y1="188" x2="334" y2="204" stroke="#D5D1C8" stroke-width="1.6" stroke-linecap="round"/>
+
+<!-- week columns : purple = events, orange = tasks -->
+<g>
+  <rect x="92"  y="286" width="68" height="44" rx="9" fill="#BC8DFF"/><rect x="92"  y="264" width="68" height="32" rx="9" fill="#F59421"/>
+  <rect x="196" y="300" width="68" height="30" rx="9" fill="#BC8DFF"/><rect x="196" y="284" width="68" height="26" rx="9" fill="#F59421"/>
+  <rect x="300" y="252" width="68" height="78" rx="9" fill="#BC8DFF"/><rect x="300" y="212" width="68" height="50" rx="9" fill="#F59421"/>
+  <rect x="404" y="304" width="68" height="26" rx="9" fill="#BC8DFF"/><rect x="404" y="290" width="68" height="24" rx="9" fill="#F59421"/>
+  <rect x="508" y="290" width="68" height="40" rx="9" fill="#BC8DFF"/><rect x="508" y="270" width="68" height="30" rx="9" fill="#F59421"/>
+  <rect x="612" y="308" width="68" height="22" rx="9" fill="#BC8DFF"/><rect x="612" y="296" width="68" height="22" rx="9" fill="#F59421"/>
+  <rect x="716" y="314" width="68" height="16" rx="8" fill="#BC8DFF"/>
+</g>
+<line x1="84" y1="332" x2="792" y2="332" stroke="#E4E1DA" stroke-width="2" stroke-linecap="round"/>
+<g class="g" font-size="12" text-anchor="middle">
+  <text x="126" y="356">Mon</text><text x="230" y="356">Tue</text>
+  <text x="334" y="356" class="t b" font-size="12">Wed</text>
+  <text x="438" y="356">Thu</text><text x="542" y="356">Fri</text><text x="646" y="356">Sat</text><text x="750" y="356">Sun</text>
+</g>
+<g font-size="11.5">
+  <rect x="92" y="380" width="10" height="10" rx="3" fill="#BC8DFF"/><text x="110" y="390" class="g">Events</text>
+  <rect x="176" y="380" width="10" height="10" rx="3" fill="#F59421"/><text x="194" y="390" class="g">Tasks</text>
+</g>
+
+<line x1="92" y1="422" x2="784" y2="422" stroke="#E4E1DA"/>
+
+<!-- distribution -->
+<text x="92" y="458" class="t b" font-size="14">And how it is split</text>
+<g clip-path="url(#dist)">
+  <rect x="92"  y="474" width="231" height="18" fill="#BC8DFF"/>
+  <rect x="323" y="474" width="184" height="18" fill="#F59421"/>
+  <rect x="507" y="474" width="185" height="18" fill="#7FA7F5"/>
+  <rect x="692" y="474" width="92"  height="18" fill="#E3E1DC"/>
+</g>
+<g stroke="#FFFFFF" stroke-width="3">
+  <circle cx="207" cy="538" r="20" fill="#D4BBFF"/>
+  <circle cx="415" cy="538" r="20" fill="#FBD9A8"/>
+  <circle cx="599" cy="538" r="20" fill="#AFC9F2"/>
+  <circle cx="738" cy="538" r="20" fill="#E3E1DC"/>
+</g>
+<g fill="#FFFFFF" opacity="0.8">
+  <circle cx="207" cy="533" r="6"/><path d="M196 548 a11 9 0 0 1 22 0 z"/>
+  <circle cx="415" cy="533" r="6"/><path d="M404 548 a11 9 0 0 1 22 0 z"/>
+  <circle cx="599" cy="533" r="6"/><path d="M588 548 a11 9 0 0 1 22 0 z"/>
+</g>
+<path d="M731 533 a7 7 0 1 1 14 0 a7 7 0 1 1 -14 0 M727 548 a11 9 0 0 1 22 0 z" fill="#FFFFFF" opacity="0.55"/>
+<g text-anchor="middle">
+  <text x="207" y="586" class="t b" font-size="13">Tom</text><text x="207" y="604" class="g" font-size="11">5 things</text>
+  <text x="415" y="586" class="t b" font-size="13">Jerry</text><text x="415" y="604" class="g" font-size="11">4 things</text>
+  <text x="599" y="586" class="t b" font-size="13">Kay</text><text x="599" y="604" class="g" font-size="11">4 things</text>
+  <text x="738" y="586" class="g b" font-size="13">Shared</text><text x="738" y="604" class="g" font-size="11">2 things</text>
+</g>
+</svg>
