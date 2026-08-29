@@ -636,6 +636,122 @@
             line-height: 1.6;
         }
 
+        /* ===== FEATURE DETAILS (full-width concept diagrams) ===== */
+        .feature-details {
+            margin-top: 4.5rem;
+            padding-top: 3.5rem;
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            flex-direction: column;
+            gap: clamp(3.5rem, 7vw, 5.5rem);
+        }
+
+        .feature-details-intro {
+            text-align: center;
+            font-family: var(--font-serif);
+            font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+            color: var(--color-text);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        /* The diagrams carry fine labelling, so they take the full content
+           width and the copy sits above them, alternating side for rhythm. */
+        .feature-detail-text {
+            max-width: 620px;
+            margin-bottom: 2rem;
+        }
+
+        .feature-detail.reverse .feature-detail-text {
+            margin-left: auto;
+        }
+
+        .feature-detail-eyebrow {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .feature-detail.reverse .feature-detail-eyebrow {
+            color: var(--color-accent-warm);
+        }
+
+        .feature-detail-text h3 {
+            font-family: var(--font-serif);
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+
+        /* :not() keeps this off the eyebrow, which sets its own size and colour */
+        .feature-detail-text p:not(.feature-detail-eyebrow) {
+            font-size: clamp(1rem, 1.8vw, 1.1rem);
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        .feature-sync-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-sync-pill {
+            display: inline-block;
+            background: rgba(188, 141, 255, 0.12);
+            color: var(--color-accent);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .feature-detail-media {
+            width: 100%;
+        }
+
+        .feature-detail-figure {
+            border-radius: 24px;
+        }
+
+        .feature-detail-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 24px;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-detail-placeholder {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            min-height: 260px;
+            background: var(--color-bg-soft);
+            border-radius: 24px;
+            border: 2px dashed var(--color-border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            color: var(--color-text-light);
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-detail-placeholder svg {
+            opacity: 0.35;
+        }
+
         /* ===== WHAT CHANGES ===== */
         .changes {
             background: var(--color-bg-warm);
@@ -1143,6 +1259,33 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .feature-detail-text {
+                max-width: none;
+                margin-bottom: 1.5rem;
+            }
+
+            .feature-detail.reverse .feature-detail-text {
+                margin-left: 0;
+            }
+
+            /* Diagram labelling stops being legible below ~620px, so the
+               figure scrolls sideways instead of shrinking past that. */
+            .feature-detail-figure {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                border-radius: 20px;
+            }
+
+            .feature-detail-img {
+                min-width: 620px;
+                border-radius: 20px;
+                box-shadow: none;
+            }
+
+            .feature-detail-placeholder {
+                min-height: 240px;
+            }
+
             .emotional-layout {
                 flex-direction: column-reverse;
                 gap: 2rem;
@@ -1477,6 +1620,86 @@
                     </div>
                     <h3>Quiet confirmations</h3>
                     <p>Did it get done? No more guessing. No more chasing. Just calm, honest check-ins.</p>
+                </div>
+            </div>
+
+            <div class="feature-details">
+                <p class="feature-details-intro fade-in">A closer look at what's inside.</p>
+
+                <!-- Feature 1: Shared calendar & tasks -->
+                <div class="feature-detail fade-in">
+                    <div class="feature-detail-text">
+                        <p class="feature-detail-eyebrow">Shared calendar &amp; tasks</p>
+                        <h3>One calendar the whole family can see.</h3>
+                        <p>One calendar, one list of tasks, shared by everyone at home. Add it once and it's there for the whole family, no forwarding, no reminding.</p>
+                        <div class="feature-sync-pills">
+                            <span class="feature-sync-pill">Syncs with Google Calendar</span>
+                            <span class="feature-sync-pill">Syncs with Outlook</span>
+                        </div>
+                    </div>
+                    <div class="feature-detail-media">
+                        <div class="feature-detail-figure">
+                            <img src="images/concepts/feature-calendar-sync.svg" alt="Diagram: Google Calendar and Outlook feeding into one shared week that everyone in the household sees" class="feature-detail-img" width="880" height="660" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="feature-detail-placeholder" style="display:none;">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                <span>Image coming soon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Daily overview -->
+                <div class="feature-detail reverse fade-in">
+                    <div class="feature-detail-text">
+                        <p class="feature-detail-eyebrow">Daily overview</p>
+                        <h3>Everything that matters today, in one place.</h3>
+                        <p>Open the app and see exactly what today holds: events, tasks, and who's on what. All in one calm view, with nothing buried.</p>
+                    </div>
+                    <div class="feature-detail-media">
+                        <div class="feature-detail-figure">
+                            <img src="images/concepts/feature-daily-overview.svg" alt="Diagram: scattered reminders from notes, texts and memory converging into one ordered daily view" class="feature-detail-img" width="880" height="660" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="feature-detail-placeholder" style="display:none;">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span>Image coming soon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Event Plans -->
+                <div class="feature-detail fade-in">
+                    <div class="feature-detail-text">
+                        <p class="feature-detail-eyebrow">Event Plans</p>
+                        <h3>Reusable plans that do the remembering.</h3>
+                        <p>Turn a recurring event into a reusable plan. Attach the tasks and things to bring, each with its own gentle lead-time reminder, so nothing becomes a last-minute scramble.</p>
+                    </div>
+                    <div class="feature-detail-media">
+                        <div class="feature-detail-figure">
+                            <img src="images/concepts/feature-event-plan.svg" alt="Diagram: a birthday party plan unpacking backwards into tasks, each with its own lead time" class="feature-detail-img" width="880" height="660" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="feature-detail-placeholder" style="display:none;">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                                <span>Image coming soon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4: Weekly digest -->
+                <div class="feature-detail reverse fade-in">
+                    <div class="feature-detail-text">
+                        <p class="feature-detail-eyebrow">Weekly digest</p>
+                        <h3>The week ahead, before it arrives.</h3>
+                        <p>A gentle look at the week ahead: every event and task, and how the load is spread across the group, so it's clear before Monday arrives.</p>
+                    </div>
+                    <div class="feature-detail-media">
+                        <div class="feature-detail-figure">
+                            <img src="images/concepts/feature-weekly-digest.svg" alt="Diagram: the week ahead as daily columns, with a bar showing how tasks are split across the group" class="feature-detail-img" width="880" height="660" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <div class="feature-detail-placeholder" style="display:none;">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                                <span>Image coming soon</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
