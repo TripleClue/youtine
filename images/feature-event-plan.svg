@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 660" width="880" height="660" role="img" aria-label="Concept: a birthday party plan unpacks backwards into tasks, each with its own lead time">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 40 880 570" width="880" height="570" role="img" aria-label="Concept: a birthday party plan unpacks backwards into tasks, each with its own lead time">
 <defs>
   <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#F8F7F2"/><stop offset="1" stop-color="#EAE8E2"/>
@@ -40,19 +40,19 @@
 <!-- task cards -->
 <g filter="url(#sh)"><rect x="62" y="234" width="156" height="62" rx="16" fill="#FFFFFF"/></g>
 <circle cx="86" cy="265" r="5" fill="#F59421"/><text x="100" y="262" class="t b" font-size="12.5">Send invitations</text>
-<text x="100" y="279" class="g" font-size="10.5">Sat 4 Oct</text>
+<text x="100" y="279" class="g" font-size="11.5">Sat 4 Oct</text>
 
 <g filter="url(#sh)"><rect x="222" y="424" width="156" height="62" rx="16" fill="#FFFFFF"/></g>
 <circle cx="246" cy="455" r="5" fill="#F59421"/><text x="260" y="452" class="t b" font-size="12.5">Order the cake</text>
-<text x="260" y="469" class="g" font-size="10.5">Sat 11 Oct</text>
+<text x="260" y="469" class="g" font-size="11.5">Sat 11 Oct</text>
 
 <g filter="url(#sh)"><rect x="362" y="234" width="156" height="62" rx="16" fill="#FFFFFF"/></g>
 <circle cx="386" cy="265" r="5" fill="#F59421"/><text x="400" y="262" class="t b" font-size="12.5">Wrap the present</text>
-<text x="400" y="279" class="g" font-size="10.5">Thu 16 Oct</text>
+<text x="400" y="279" class="g" font-size="11.5">Thu 16 Oct</text>
 
 <g filter="url(#sh)"><rect x="492" y="424" width="156" height="62" rx="16" fill="#FFFFFF"/></g>
 <circle cx="516" cy="455" r="5" fill="#F59421"/><text x="530" y="452" class="t b" font-size="12.5">Collect the cake</text>
-<text x="530" y="469" class="g" font-size="10.5">Sat, 11:00</text>
+<text x="530" y="469" class="g" font-size="11.5">Sat, 11:00</text>
 
 <!-- nodes -->
 <g stroke="#FFFFFF" stroke-width="4">
