@@ -126,6 +126,7 @@
             padding-bottom: 3rem;
             border-bottom: 1px solid var(--color-border);
         }
+        .policy-section { scroll-margin-top: 6rem; }
         .policy-section:last-child {
             border-bottom: none;
             margin-bottom: 0;
@@ -298,7 +299,7 @@
         <div class="page-hero-inner">
             <span class="page-label">Legal</span>
             <h1>Privacy Policy &amp; GDPR</h1>
-            <p class="page-hero-meta">Last updated: August 2026</p>
+            <p class="page-hero-meta">Last updated: October 2026</p>
         </div>
     </div>
 
@@ -334,6 +335,18 @@
                             <td>An optional profile picture, if a user chooses to upload one</td>
                         </tr>
                         <tr>
+                            <td><strong>Family content</strong></td>
+                            <td>The routines, tasks, events, lists, recipes and check-ins that you and your family add to Youtine</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Connected calendar events</strong></td>
+                            <td>If you connect a Google or Microsoft calendar, the events in it, such as each event's title, time and location (see <a href="#connected-calendars">section 6</a>)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI capture requests</strong></td>
+                            <td>What you type or say into AI capture, so it can be turned into tasks, events or list items (see <a href="#ai-capture">section 5</a>)</td>
+                        </tr>
+                        <tr>
                             <td><strong>Push notification tokens</strong></td>
                             <td>Identifiers needed to send push notifications via iOS or Android</td>
                         </tr>
@@ -343,7 +356,11 @@
                         </tr>
                         <tr>
                             <td><strong>Usage and analytics data</strong></td>
-                            <td>Information about your interactions and activity, collected via Mixpanel in the app and, only with your consent, on our website</td>
+                            <td>How the app and website are used, such as which screens are opened and which features are used. This is collected with Mixpanel and linked to a pseudonymous identifier. We don't send your name, your email address or anything your family writes in Youtine to Mixpanel. On our website, it is collected only with your consent.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Error reports</strong></td>
+                            <td>Technical details when something goes wrong in the app or on our servers, such as the error itself, your device model, operating system and app version, and what the app was doing at the time</td>
                         </tr>
                     </tbody>
                 </table>
@@ -351,11 +368,11 @@
 
             <div class="policy-section">
                 <h2><span class="section-num">3</span> Legal Basis for Processing</h2>
-                <p>We process your personal data on the following bases:</p>
+                <p>We rely on one legal basis for each purpose:</p>
                 <ul>
-                    <li><strong>Consent</strong>: for optional features such as push notifications, and, where required by law, for processing the data of children in a family (given by the account holder on their behalf).</li>
-                    <li><strong>Contract performance</strong>: for core account setup and the Service operations necessary to fulfil our contract with you.</li>
-                    <li><strong>Legitimate interests</strong>: for analytics and security monitoring, provided those interests are not overridden by your fundamental rights and freedoms.</li>
+                    <li><strong>Contract performance</strong>: to create and run your account and family space, import the calendars you connect, handle AI capture requests when you use it, and send emails about your account.</li>
+                    <li><strong>Consent</strong>: for push notifications (asked for by your phone), for analytics on our website (asked for by our cookie banner), and, where required by law, for processing the data of children in a family (given by the account holder on their behalf).</li>
+                    <li><strong>Legitimate interests</strong>: for in-app analytics, error monitoring and security. Our interest is understanding which parts of Youtine actually help families, and keeping the app reliable and safe. We collect this data in pseudonymous form and only what we need for those purposes. You can object at any time (see <a href="#your-rights">section 11</a>).</li>
                 </ul>
             </div>
 
@@ -364,14 +381,38 @@
                 <ul>
                     <li>To operate and maintain your account and provide the Youtine Service</li>
                     <li>To share routines, tasks, and plans between members of your family or household</li>
-                    <li>To send you relevant notifications, when you opt in</li>
-                    <li>To analyse usage patterns and improve our products (using Mixpanel, in the app and on our website only with your consent)</li>
+                    <li>To show events from the calendars you connect alongside your family's plans</li>
+                    <li>To turn what you type or say into tasks, events and list items, when you use AI capture</li>
+                    <li>To send you notifications, when you opt in, and emails about your account</li>
+                    <li>To understand how the app is used and improve it (using Mixpanel; on our website, only with your consent)</li>
+                    <li>To find and fix errors in the app and on our servers (using Sentry)</li>
                     <li>To secure our Service from misuse or unauthorised access</li>
                 </ul>
             </div>
 
+            <div class="policy-section" id="ai-capture">
+                <h2><span class="section-num">5</span> AI Capture</h2>
+                <p>AI capture lets you type or say something like "swimming kit every Thursday" and have Youtine turn it into a task, an event or a list item. To make sense of a request like that, Youtine sends the following to Anthropic, our AI provider:</p>
+                <ul>
+                    <li>what you typed or said</li>
+                    <li>the names of the people in your household</li>
+                    <li>your lists and recipes</li>
+                </ul>
+                <p>This context is what lets AI capture know who "Ava" is, or which list "milk" belongs on. Events from your connected calendars are not sent.</p>
+                <p>Anthropic processes this data on our behalf, only to return a result to us. Under its commercial terms, Anthropic does not use it to train its AI models, and it deletes it within 30 days unless it needs to keep it longer to enforce its usage policies or comply with the law.</p>
+                <p>If you speak rather than type, your phone's built-in speech recognition (provided by Apple on iPhone, or Google on Android) turns your voice into text first. Youtine receives the text, not a recording. Apple and Google handle this under their own privacy policies.</p>
+                <p>AI capture is optional. Anything it can do, you can also add by hand.</p>
+            </div>
+
+            <div class="policy-section" id="connected-calendars">
+                <h2><span class="section-num">6</span> Connected Calendars</h2>
+                <p>You can choose to connect a Google or Microsoft (Outlook) calendar. When you do, Youtine imports its events so they appear alongside your family's plans. We use this data only to provide that feature. We don't use it for advertising, we don't sell it, and we don't use it to train AI models.</p>
+                <p>Google and Microsoft are not our processors: they pass this data to us at your request, under their own terms. You can remove Youtine's access at any time from your Google or Microsoft account settings.</p>
+                <p>Youtine's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+            </div>
+
             <div class="policy-section">
-                <h2><span class="section-num">5</span> Data Processors</h2>
+                <h2><span class="section-num">7</span> Data Processors</h2>
                 <p>We use carefully selected third-party service providers that handle your data only under our instructions and as necessary to provide the Service:</p>
                 <table class="policy-table">
                     <thead>
@@ -383,45 +424,78 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>AWS</strong></td>
-                            <td>Cloud infrastructure; file and data storage</td>
-                            <td>May involve US or EU processing; protected by Standard Contractual Clauses (SCCs)</td>
+                            <td><strong>Render</strong></td>
+                            <td>Hosting for Youtine's servers</td>
+                            <td>EU</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Neon</strong></td>
+                            <td>Database where your account and family content are stored</td>
+                            <td>EU</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cloudflare R2</strong></td>
+                            <td>File storage, such as profile photos</td>
+                            <td>EU</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anthropic</strong></td>
+                            <td>AI capture: what you typed or said, plus household names, lists and recipes (see <a href="#ai-capture">section 5</a>)</td>
+                            <td>US; protected by Standard Contractual Clauses (SCCs)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sentry</strong></td>
+                            <td>Error monitoring for the app and our servers</td>
+                            <td>EU</td>
                         </tr>
                         <tr>
                             <td><strong>Mixpanel</strong></td>
-                            <td>Product and website analytics (how the app and site are used)</td>
+                            <td>Product analytics in the app, and website analytics with your consent</td>
                             <td>EU data residency endpoint; may involve US processing, protected by SCCs</td>
                         </tr>
                         <tr>
+                            <td><strong>Expo</strong></td>
+                            <td>Push notification service: passes notifications to Apple and Google for delivery to your device</td>
+                            <td>US; protected by SCCs</td>
+                        </tr>
+                        <tr>
                             <td><strong>Apple / Google</strong></td>
-                            <td>Native push notifications</td>
+                            <td>Delivery of push notifications to your device</td>
                             <td>Follows iOS/Android platform privacy standards</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mailtrap</strong></td>
+                            <td>Sending emails about your account</td>
+                            <td>May involve processing outside the EEA, protected by SCCs</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <div class="policy-section">
-                <h2><span class="section-num">6</span> International Data Transfers</h2>
-                <p>Some of your data may be processed outside the European Economic Area (EEA), such as by AWS or Mixpanel. In these cases, we rely on Standard Contractual Clauses as approved by the European Commission, ensuring equivalent protection of your personal data.</p>
+                <h2><span class="section-num">8</span> International Data Transfers</h2>
+                <p>Your account, your family's content, your files and our error reports are stored in the EU. Some providers process data outside the European Economic Area (EEA): Anthropic (AI capture) and Expo (push notifications) in the US, and in some cases Mixpanel and Mailtrap. Where that happens, we rely on Standard Contractual Clauses as approved by the European Commission, ensuring equivalent protection of your personal data.</p>
             </div>
 
             <div class="policy-section">
-                <h2><span class="section-num">7</span> Data Retention</h2>
+                <h2><span class="section-num">9</span> Data Retention</h2>
                 <ul>
-                    <li><strong>Account data</strong>: including name, email, date of birth, and profile photo, retained for as long as your account is active. Personal data is permanently deleted from primary systems within 30 days of account deletion.</li>
-                    <li><strong>Analytics data</strong>: retained according to Mixpanel's standard retention policy; can be erased upon request or opt-out.</li>
+                    <li><strong>Account data and family content</strong>: including name, email, date of birth, profile photo, imported calendar events and everything your family adds, retained for as long as your account is active. Personal data is permanently deleted from primary systems within 30 days of account deletion.</li>
+                    <li><strong>AI capture requests</strong>: the tasks, events and items AI capture creates become part of your family content. Anthropic deletes what we send it within 30 days, as described in <a href="#ai-capture">section 5</a>.</li>
+                    <li><strong>Error reports</strong>: kept by Sentry for a limited period under its standard retention policy, then deleted automatically.</li>
+                    <li><strong>Analytics data</strong>: retained according to Mixpanel's standard retention policy; can be erased on request.</li>
                 </ul>
             </div>
 
             <div class="policy-section">
-                <h2><span class="section-num">8</span> Children's Data</h2>
+                <h2><span class="section-num">10</span> Children's Data</h2>
                 <p>Youtine is a family app, and a family set up by an account holder may include children. The account holder creates and manages the family, enters the limited information we hold about each member (name, email, date of birth, and an optional profile photo), and is responsible for providing any consent required by law on a child's behalf.</p>
+                <p>If your family uses AI capture, the names of family members, including children, are sent to Anthropic as context, as described in <a href="#ai-capture">section 5</a>. Anthropic does not use them to train its AI models.</p>
                 <p>We keep the data we hold about children to the minimum needed to run the family's shared routines, tasks, and plans. We do not use children's data for advertising, and we do not build marketing profiles of any user. If you believe a child's data has been provided to us without the proper authority, contact us at <a href="mailto:privacy@youtine.app">privacy@youtine.app</a> and we will address it.</p>
             </div>
 
-            <div class="policy-section">
-                <h2><span class="section-num">9</span> Your Rights Under GDPR</h2>
+            <div class="policy-section" id="your-rights">
+                <h2><span class="section-num">11</span> Your Rights Under GDPR</h2>
                 <p>You have the following rights in relation to your personal data:</p>
                 <ul>
                     <li>Right to <strong>access</strong> your personal data</li>
@@ -431,11 +505,12 @@
                     <li>Right to <strong>data portability</strong> (receive your data in a structured format)</li>
                     <li>Right to <strong>withdraw consent</strong> at any time for features that rely on consent</li>
                 </ul>
+                <p><strong>Your right to object.</strong> Where we rely on legitimate interests, which covers in-app analytics and error monitoring, you can object at any time. If you'd rather we didn't collect analytics about how you use the app, email <a href="mailto:privacy@youtine.app">privacy@youtine.app</a> and we'll stop it for your account.</p>
                 <p>To exercise any of these rights, email your request to <a href="mailto:privacy@youtine.app">privacy@youtine.app</a>.</p>
             </div>
 
             <div class="policy-section">
-                <h2><span class="section-num">10</span> Right to Complain</h2>
+                <h2><span class="section-num">12</span> Right to Complain</h2>
                 <p>If you are not satisfied with our response, you have the right to submit a complaint to the Dutch Data Protection Authority (<em>Autoriteit Persoonsgegevens</em>). For more information, visit <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener">autoriteitpersoonsgegevens.nl</a>.</p>
             </div>
 
@@ -447,6 +522,7 @@
             <a href="/" class="footer-logo"><img src="images/logo-white.png" alt="Youtine" height="40" onerror="this.style.display='none';this.nextElementSibling.style.display='inline';"><span style="display:none;">Youtine</span></a>
             <ul class="footer-links">
                 <li><a href="/blog/">Blog</a></li>
+                <li><a href="/support">Support</a></li>
                 <li><a href="mailto:hello@youtine.app">Contact Us</a></li>
                 <li><a href="/privacy">Privacy Policy &amp; GDPR</a></li>
                 <li><a href="/cookies">Cookie Policy</a></li>
